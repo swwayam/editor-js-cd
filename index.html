@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inp {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="inp" id="input" oninput="editText()">
+    <iframe src="./template.html" id="iframe1" width="300" height="250" frameborder="0"></iframe>
+
+    <button onclick="btn()">check</button>
+
+    <script>
+        const input = document.getElementById("input")
+        const iframe = document.getElementById("iframe1")
+        let editableFrame;
+
+        async function get() {
+            iframe.onload = function (event) {
+                editableFrame = iframe.contentDocument.body;
+                // let a = editableFrame.querySelector('#text');
+            
+            };
+
+
+        }
+
+        get();
+
+        console.log(name);
+
+        function editText() {
+            console.log("chagne");
+            editableFrame.querySelector("#text").innerHTML = input.value
+        }
+    </script>
+</body>
+
+</html>
